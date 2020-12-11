@@ -1,6 +1,7 @@
 Items
-Type: weapon, edible, tools, misc, loot
+Class: armor, weapon, edible, tools, misc, loot
 For all: name
+For armor: durability, protection, abilities, level
 For weapon: durability, damage, crit chance, level
 For edible: restore, for potion: effect, duration, level
 For tools: durability, level, mining speed, destroyable materials, level
