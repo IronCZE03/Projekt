@@ -1,1 +1,8 @@
-items.txt
+Items
+Type: weapon, edible, tools, misc, loot
+For all: name
+For weapon: durability, damage, crit chance, level
+For edible: restore, for potion: effect, duration, level
+For tools: durability, level, mining speed, destroyable materials, level
+For loot: level, uses
+For misc: uses, obtained from
