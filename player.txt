@@ -1,1 +1,6 @@
-player.txt
+Player
+class:
+abilities:
+HP:
+basedmg:
+speed:
