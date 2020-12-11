@@ -4,3 +4,5 @@ abilities:
 HP:
 basedmg:
 speed:
+base items (inv[])
+armorClass
