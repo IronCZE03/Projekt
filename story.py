@@ -42,7 +42,7 @@ else:
             goblinHP = "10"
             myHP -= 1
             while goblinHP > 0 or myHP > 0:
-                print("Po goblinově útoku ti zbývá " + myHP + " životů. Teď máš šanci mu to vrátit.")
+                print("Po goblinově útoku ti zbývá " + str(myHP) + " životů. Teď máš šanci mu to vrátit.")
                 decide = input("Můžeš -zaútočit- nebo se -krýt-. Co chceš udělat? ")
                 if hasSword == True and decide == "zaútočit":
                     print("Zaútočil jsi na goblina.")
@@ -50,17 +50,17 @@ else:
                     if gob == "10":
                         print("Ten se ale tvému útoku vyhl a zasadil ti další ránu.")
                         myHP -= 1
-                        print("Goblinovi zbývá " + goblinHP + " životů.")
+                        print("Goblinovi zbývá " + str(goblinHP) + " životů.")
                     else:
                         print("Tvůj útok byl úspěšný.")
                         swo = randint(1, 4)
                         if swo == "4":
                             goblinHP -= 3
-                            print("Goblinovi zbývá " + goblinHP + " životů.")
+                            print("Goblinovi zbývá " + str(goblinHP) + " životů.")
                             myHP -= 1
                         else:
                             goblinHP -= 2
-                            print("Goblinovi zbývá " + goblinHP + " životů.")
+                            print("Goblinovi zbývá " + str(goblinHP) + " životů.")
                             myHP -= 1
                 elif hasSword == False and decide == "zaútočit":
                     print("Zaútočil jsi na goblina.")
@@ -71,7 +71,7 @@ else:
                     else:
                         print("Tvůj útok byl úspěšný.")
                         goblinHP -= 1
-                        print("Goblinovi zbývá " + goblinHP + " životů.")
+                        print("Goblinovi zbývá " + str(goblinHP) + " životů.")
                         myHP -= 1
                 else:
                     me = randint(1, 10)
@@ -81,7 +81,7 @@ else:
                     elif me == "10":
                         print("Tvé vyhnutí se zmátlo goblina natolik, že při útoku narazil hlavou do zdi.")
                         goblinHP -= 1
-                        print("Goblinovi zbývá " + goblinHP + " životů.")
+                        print("Goblinovi zbývá " + str(goblinHP) + " životů.")
                     else:
                         print("Úspěšně ses vyhl goblinovu útoku.")
             else:
