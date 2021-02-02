@@ -1,4 +1,5 @@
 from random import randint
+myHP = "10"
 print("Právě jsi se vzbudil v jakési cele, nemáš sebemenší tušení, jak ses tam dostal. Nevzpomínáš si, co se předešlé noci stalo.")
 print("Dveře tvé cely jsou z neznámého důvodu otevřeny.")
 print("Blíží se první rozhodnutí. Možnosti budou vždy označeny -takto-. Prosím vepiš je na určené místo ve stejném tvaru, v jakém je uvidíš.")
@@ -13,8 +14,10 @@ else:
     decide = input("Chceš jej -sebrat- nebo jej -nechat- ležet? ")
     if decide == "sebrat":
         print("Sebral jsi meč, a pokračoval ke dveřím.")
+        hasSword = True
     else:
         print("Rezavý meč ti za námahu nestál, proto ses vydal rovnou ke dveřím.")
+        hasSword = False
     i = randint(0, 2)
     j = randint(0, 2)
     while j == i:
@@ -36,3 +39,57 @@ else:
             print("Otevřel jsi dveře naproti tobě.")
         if decide == fight:
             print("Jen, co jsi vešel do místnosti, vrhl se na tebe goblin!")
+            goblinHP = "10"
+            myHP -= 1
+            while goblinHP > 0 or myHP > 0:
+                print("Po goblinově útoku ti zbývá " + myHP + " životů. Teď máš šanci mu to vrátit.")
+                decide = input("Můžeš -zaútočit- nebo se -krýt-. Co chceš udělat? ")
+                if hasSword == True and decide == "zaútočit":
+                    print("Zaútočil jsi na goblina.")
+                    gob = randint(1, 10)
+                    if gob == "10":
+                        print("Ten se ale tvému útoku vyhl a zasadil ti další ránu.")
+                        myHP -= 1
+                        print("Goblinovi zbývá " + goblinHP + " životů.")
+                    else:
+                        print("Tvůj útok byl úspěšný.")
+                        swo = randint(1, 4)
+                        if swo == "4":
+                            goblinHP -= 3
+                            print("Goblinovi zbývá " + goblinHP + " životů.")
+                            myHP -= 1
+                        else:
+                            goblinHP -= 2
+                            print("Goblinovi zbývá " + goblinHP + " životů.")
+                            myHP -= 1
+                elif hasSword == False and decide == "zaútočit":
+                    print("Zaútočil jsi na goblina.")
+                    gob = randint(1, 10)
+                    if gob == "10":
+                        print("Ten se ale tvému útoku vyhl a zasadil ti další ránu.")
+                        myHP -= 1
+                    else:
+                        print("Tvůj útok byl úspěšný.")
+                        goblinHP -= 1
+                        print("Goblinovi zbývá " + goblinHP + " životů.")
+                        myHP -= 1
+                else:
+                    me = randint(1, 10)
+                    if me == "1":
+                        print("Pokusil ses uhnout, ale goblin byl příliš rychlý.")
+                        myHP -= 1
+                    elif me == "10":
+                        print("Tvé vyhnutí se zmátlo goblina natolik, že při útoku narazil hlavou do zdi.")
+                        goblinHP -= 1
+                        print("Goblinovi zbývá " + goblinHP + " životů.")
+                    else:
+                        print("Úspěšně ses vyhl goblinovu útoku.")
+            else:
+                if myHP == 0:
+                    print("Snažil ses, ale goblin byl nad tvé síly.")
+                else:
+                    print("Dalo to práci, ale goblina jsi nakonec porazil.")
+                    print("Zde příběh zatím končí. Děkujeme za hru.")
+        else:
+            print("Vešel jsi do prázdné místnosti.")
+            print("Zde příběh zatím končí. Děkujeme za hru.")
