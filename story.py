@@ -42,7 +42,7 @@ def story():
                     print("Jen, co jsi vešel do místnosti, vrhl se na tebe goblin!")
                     goblinHP = 10
                     myHP -= 1
-                    while goblinHP > 0 or myHP > 0:
+                    while goblinHP > 0 and myHP > 0:
                         print("Po goblinově útoku ti zbývá " + str(myHP) + " životů. Teď máš šanci mu to vrátit.")
                         decide = input("Můžeš -zaútočit- nebo se -krýt-. Co chceš udělat? ")
                         if hasSword == True and decide == "zaútočit":
