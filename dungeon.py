@@ -50,6 +50,7 @@ def createRooms(dungeon):
                             if dungeon[c][d] != "room" and dungeon[a][b] == "room":
                                 dungeon[c][d] = "room"
                                 continue
+    dungeon[0][0] = "entry"
     return dungeon
 
 def createDungeon():
@@ -102,6 +103,11 @@ def pohyb(dungeon, x, y, listPozic, konec):
     elif prikaz=="doprava": y, listPozic=doprava(x, y, listPozic)
     elif prikaz=="zpet": x, y, listPozic=zpet(listPozic)
     elif prikaz=="konec": konec=True
+    elif prikaz=="mapa":
+        for rooms in dungeon:
+            for room in rooms:
+                print(room + "     ", end=" ")
+            print(end="\n")
     else: print("špatný příkaz")
     return x, y, listPozic, konec
 
